@@ -19,5 +19,8 @@
 	<modules>
 		<module>core</module>
 		<module>web</module>
+		<module>aggregation-service</module>
+		<module>evaluation-service</module>
+		<module>execution-service</module>
 	</modules>
 </project>
