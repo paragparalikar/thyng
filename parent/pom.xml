@@ -23,5 +23,6 @@
 		<module>evaluation-service</module>
 		<module>execution-service</module>
 		<module>master-data-service</module>
+		<module>metrics-service</module>
 	</modules>
 </project>
