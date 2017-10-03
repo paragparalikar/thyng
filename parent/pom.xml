@@ -22,5 +22,6 @@
 		<module>aggregation-service</module>
 		<module>evaluation-service</module>
 		<module>execution-service</module>
+		<module>master-data-service</module>
 	</modules>
 </project>

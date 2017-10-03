@@ -12,6 +12,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.data.rest.core.annotation.RestResource;
 
 @Data
 @Entity
@@ -33,6 +34,7 @@ public class Property extends AuditedEntity{
 	private Boolean writable;
 	
 	@ManyToOne
+	@RestResource(exported=false)
 	private Template template;
 	
 	@Column(nullable=false)

@@ -6,12 +6,21 @@
 		<artifactId>parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>execution-service</artifactId>
+	<artifactId>master-data-service</artifactId>
+	<packaging>war</packaging>
 	<dependencies>
 		<dependency>
 			<groupId>com.thyng</groupId>
 			<artifactId>core</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
 		</dependency>
 	</dependencies>
 
@@ -23,4 +32,5 @@
 			</plugin>
 		</plugins>
 	</build>
+
 </project>
