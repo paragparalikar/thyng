@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: ${PORT:8761}
 spring:
   application:
     name: discovery-service
@@ -12,3 +12,8 @@ spring:
           uri: https://github.com/paragparalikar/thyng-config
           basedir: target/config
           searchPaths: resources
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
