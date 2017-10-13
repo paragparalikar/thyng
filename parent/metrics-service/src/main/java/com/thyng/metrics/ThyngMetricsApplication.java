@@ -7,20 +7,13 @@ import java.util.Map;
 import org.springframework.beans.factory.config.CustomEditorConfigurer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class ThyngMetricsApplication extends SpringBootServletInitializer  {
+public class ThyngMetricsApplication  {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ThyngMetricsApplication.class, args);
-	}
-	
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-		return builder.sources(ThyngMetricsApplication.class);
 	}
 	
 	@Bean

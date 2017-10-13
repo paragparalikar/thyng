@@ -8,15 +8,10 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 @EnableZuulProxy	
 @SpringBootApplication
-public class ThyngGatewayApplication extends SpringBootServletInitializer  {
+public class ThyngGatewayApplication  {
 	
 	public static void main(String[] args) {
 		SpringApplication.run(ThyngGatewayApplication.class, args);
-	}
-	
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-		return builder.sources(ThyngGatewayApplication.class);
 	}
 	
 }
