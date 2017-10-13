@@ -3,10 +3,12 @@ server:
 spring:
   application:
     name: discovery-service
-cloud:
+  cloud:
     config:
       override-none: true
       allow-override: true
       server:
         git: 
-          uri: 
+          uri: https://github.com/paragparalikar/thyng-config
+          basedir: target/config
+          searchPaths: resources
