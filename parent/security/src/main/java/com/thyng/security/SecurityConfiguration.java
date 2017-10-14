@@ -3,7 +3,6 @@ package com.thyng.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -18,14 +17,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	public void globalUserDetails(final AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication().withUser("user").password("password").roles("USER").and().withUser("admin")
-				.password("admin").roles("USER", "ADMIN", "ACTUATOR");
+		auth.inMemoryAuthentication().withUser("admin").password("admin").roles("USER", "ADMIN", "ACTUATOR");
 	}
 
 	@Override
 	protected void configure(final HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers(HttpMethod.OPTIONS).permitAll().anyRequest().authenticated().and()
-				.httpBasic().and().csrf().disable();
+		http.authorizeRequests().antMatchers("/login*").anonymous().anyRequest().authenticated().and().formLogin()
+				.loginPage("/login.html").permitAll().loginProcessingUrl("/login").and().logout()
+				.logoutSuccessUrl("/login.html").and().httpBasic().disable().csrf().disable();
 	}
 
 	@Bean
