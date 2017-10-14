@@ -1,0 +1,17 @@
+server:
+  port: ${PORT:8888}
+spring:
+  application:
+    name: config-service
+  boot:
+    admin:
+      url: ${ADMIN_SERVICE:http://localhost:8080}
+  cloud:
+    config:
+      override-none: true
+      allow-override: true
+      server:
+        git:
+          uri: https://github.com/paragparalikar/thyng-config
+          basedir: target/config
+          searchPaths: thyng-config/resources

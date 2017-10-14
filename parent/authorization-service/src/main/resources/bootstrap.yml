@@ -1,9 +1,6 @@
-server:
-  port: 8085
-
 spring:
   application:
-    name: master-data-service
+    name: authorization-service
   cloud:
     config:
       uri: ${CONFIG_SERVICE:http://localhost:8888}

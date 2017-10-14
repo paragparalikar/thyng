@@ -3,4 +3,4 @@ spring:
     name: gateway-service
   cloud:
     config:
-      uri: ${CONFIG_SERVICE:http://localhost:8761}
+      uri: ${CONFIG_SERVICE:http://localhost:8888}

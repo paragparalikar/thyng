@@ -38,14 +38,6 @@
 		</plugins>
 	</build>
 
-	<dependencies>
-		<dependency>
-			<groupId>de.codecentric</groupId>
-			<artifactId>spring-boot-admin-starter-client</artifactId>
-			<version>1.5.4</version>
-		</dependency>
-	</dependencies>
-
 	<modules>
 		<module>core</module>
 		<module>gateway-service</module>
@@ -55,5 +47,8 @@
 		<module>metrics-service</module>
 		<module>discovery-service</module>
 		<module>admin-service</module>
+		<module>authorization-service</module>
+		<module>security</module>
+		<module>config-service</module>
 	</modules>
 </project>

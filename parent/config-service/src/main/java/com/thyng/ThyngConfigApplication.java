@@ -2,14 +2,14 @@ package com.thyng;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+import org.springframework.cloud.config.server.EnableConfigServer;
 
-@EnableEurekaServer
+@EnableConfigServer
 @SpringBootApplication
-public class ThyngDiscoveryApplication {
+public class ThyngConfigApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ThyngDiscoveryApplication.class, args);
+		SpringApplication.run(ThyngConfigApplication.class, args);
 	}
 
 }
