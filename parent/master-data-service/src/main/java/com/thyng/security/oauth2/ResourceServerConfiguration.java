@@ -22,7 +22,9 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
 				.antMatchers(HttpMethod.PUT, "/users/**").access("#oauth2.hasScope('write_users')")
 				.antMatchers(HttpMethod.POST, "/users/**").access("#oauth2.hasScope('write_users')")
 				.antMatchers(HttpMethod.PATCH, "/users/**").access("#oauth2.hasScope('write_users')")
-				.antMatchers(HttpMethod.DELETE, "/users/**").access("#oauth2.hasScope('write_users')");
+				.antMatchers(HttpMethod.DELETE, "/users/**").access("#oauth2.hasScope('write_users')")
+				.antMatchers(HttpMethod.GET, "/things").access("#oauth2.hasScope('read_things')")
+				.antMatchers(HttpMethod.GET, "/things/**").access("#oauth2.hasScope('read_things')");
 	}
 
 	@Override
