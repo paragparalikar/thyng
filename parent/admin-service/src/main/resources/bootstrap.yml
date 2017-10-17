@@ -4,3 +4,5 @@ spring:
   cloud:
     config:
       uri: ${CONFIG_SERVICE:http://localhost:8888}
+      username: parag
+      password: parag

@@ -1,5 +1,9 @@
 server:
   port: ${PORT:8888}
+security: 
+  user: 
+    name: parag
+    password: parag
 spring:
   application:
     name: config-service

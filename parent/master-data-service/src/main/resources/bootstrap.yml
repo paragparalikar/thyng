@@ -1,9 +1,10 @@
-server:
-  port: 8085
-
 spring:
   application:
     name: master-data-service
   cloud:
     config:
       uri: ${CONFIG_SERVICE:http://localhost:8888}
+      username: parag
+      password: parag
+
+    

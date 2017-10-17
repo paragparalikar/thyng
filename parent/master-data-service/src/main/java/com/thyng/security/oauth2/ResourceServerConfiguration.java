@@ -18,13 +18,15 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
 
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers(HttpMethod.GET, "/users").access("#oauth2.hasScope('read_users')")
-				.antMatchers(HttpMethod.PUT, "/users/**").access("#oauth2.hasScope('write_users')")
-				.antMatchers(HttpMethod.POST, "/users/**").access("#oauth2.hasScope('write_users')")
-				.antMatchers(HttpMethod.PATCH, "/users/**").access("#oauth2.hasScope('write_users')")
-				.antMatchers(HttpMethod.DELETE, "/users/**").access("#oauth2.hasScope('write_users')")
-				.antMatchers(HttpMethod.GET, "/things").access("#oauth2.hasScope('read_things')")
-				.antMatchers(HttpMethod.GET, "/things/**").access("#oauth2.hasScope('read_things')");
+		http.requestMatchers().antMatchers("/**").and().authorizeRequests().antMatchers(HttpMethod.GET, "/user")
+				.access("isAuthenticated()").antMatchers(HttpMethod.GET, "/users")
+				.access("#oauth2.hasScope('read_users')").antMatchers(HttpMethod.PUT, "/users/**")
+				.access("#oauth2.hasScope('write_users')").antMatchers(HttpMethod.POST, "/users/**")
+				.access("#oauth2.hasScope('write_users')").antMatchers(HttpMethod.PATCH, "/users/**")
+				.access("#oauth2.hasScope('write_users')").antMatchers(HttpMethod.DELETE, "/users/**")
+				.access("#oauth2.hasScope('write_users')").antMatchers(HttpMethod.GET, "/things")
+				.access("#oauth2.hasScope('read_things')").antMatchers(HttpMethod.GET, "/things/**")
+				.access("#oauth2.hasScope('read_things')").anyRequest().authenticated();
 	}
 
 	@Override
