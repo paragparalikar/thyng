@@ -36,9 +36,9 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
 
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 		clients.inMemory().withClient("gateway-service").secret("gateway-service")
-				.authorities("USER", "ADMIN", "ACTUATOR")
+				.authorities("read_user", "write_user", "read_things","write_things")
 				.authorizedGrantTypes("client_credentials", "implicit", "authorization_code", "refresh_token")
-				.scopes("read_things", "read_users", "write_users").autoApprove(true).accessTokenValiditySeconds(3600);
+				.autoApprove(true).accessTokenValiditySeconds(3600);
 	}
 
 	@Override
