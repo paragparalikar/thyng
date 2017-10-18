@@ -35,7 +35,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		// @formatter:off
 		http.antMatcher("/**").authorizeRequests()
-				.antMatchers("/", "/login**").permitAll().anyRequest().authenticated()
+				.antMatchers("/", "/login**","/images/**").anonymous().anyRequest().authenticated()
 				.and().exceptionHandling().authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/"))
 				.and().logout().logoutSuccessUrl("/").permitAll()
 				.and().csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
