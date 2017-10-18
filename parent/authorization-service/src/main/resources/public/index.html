@@ -8,31 +8,50 @@
 <link href="assets/css/font-awesome.css" rel="stylesheet">
 <link href="assets/css/docs.css" rel="stylesheet">
 <link href="assets/css/bootstrap-social.css" rel="stylesheet">
+<style>
+html, body, .container-table {
+	height: 100%;
+}
+
+.container-table {
+	display: table;
+}
+
+.vertical-center-row {
+	display: table-cell;
+	vertical-align: middle;
+}
+</style>
 </head>
 
 <body>
-	<div class="container col-sm-6 social-buttons" style="padding:20px;">
-		<a class="btn btn-lg btn-block btn-social btn-bitbucket"> <span
-			class="fa fa-bitbucket"></span> Sign in with Bitbucket
-		</a> <a class="btn btn-lg btn-block btn-social btn-dropbox"> <span
-			class="fa fa-dropbox"></span> Sign in with Dropbox
-		</a> <a class="btn btn-lg btn-block btn-social btn-facebook"> <span
-			class="fa fa-facebook"></span> Sign in with Facebook
-		</a> <a class="btn btn-lg btn-block btn-social btn-github"> <span
-			class="fa fa-github"></span> Sign in with GitHub
-		</a> <a href="/uaa/login/google" class="btn btn-lg btn-block btn-social btn-google"> <span
-			class="fa fa-google"></span> Sign in with Google
-		</a> <a class="btn btn-lg btn-block btn-social btn-instagram"> <span
-			class="fa fa-instagram"></span> Sign in with Instagram
-		</a> <a class="btn btn-lg btn-block btn-social btn-linkedin"> <span
-			class="fa fa-linkedin"></span> Sign in with LinkedIn
-		</a> <a class="btn btn-lg btn-block btn-social btn-microsoft"> <span
-			class="fa fa-windows"></span> Sign in with Microsoft
-		</a> <a class="btn btn-lg btn-block btn-social btn-openid"> <span
-			class="fa fa-openid"></span> Sign in with OpenID
-		</a> <a class="btn btn-lg btn-block btn-social btn-twitter"> <span
-			class="fa fa-twitter"></span> Sign in with Twitter
-		</a>
+	<div class="container container-table">
+		<div class="row vertical-center-row">
+			<div class="text-center col-md-4 col-md-offset-4 social-buttons">
+				<a class="btn btn-lg btn-block btn-social btn-bitbucket"> <span
+					class="fa fa-bitbucket"></span> Sign in with Bitbucket
+				</a> <a class="btn btn-lg btn-block btn-social btn-dropbox"> <span
+					class="fa fa-dropbox"></span> Sign in with Dropbox
+				</a> <a class="btn btn-lg btn-block btn-social btn-facebook"> <span
+					class="fa fa-facebook"></span> Sign in with Facebook
+				</a> <a class="btn btn-lg btn-block btn-social btn-github"> <span
+					class="fa fa-github"></span> Sign in with GitHub
+				</a> <a href="/uaa/login/google"
+					class="btn btn-lg btn-block btn-social btn-google"> <span
+					class="fa fa-google"></span> Sign in with Google
+				</a> <a class="btn btn-lg btn-block btn-social btn-instagram"> <span
+					class="fa fa-instagram"></span> Sign in with Instagram
+				</a> <a class="btn btn-lg btn-block btn-social btn-linkedin"> <span
+					class="fa fa-linkedin"></span> Sign in with LinkedIn
+				</a> <a class="btn btn-lg btn-block btn-social btn-microsoft"> <span
+					class="fa fa-windows"></span> Sign in with Microsoft
+				</a> <a class="btn btn-lg btn-block btn-social btn-openid"> <span
+					class="fa fa-openid"></span> Sign in with OpenID
+				</a> <a class="btn btn-lg btn-block btn-social btn-twitter"> <span
+					class="fa fa-twitter"></span> Sign in with Twitter
+				</a>
+			</div>
+		</div>
 	</div>
 </body>
 </html>
