@@ -1,13 +1,196 @@
 <html>
+<head>
+<style>
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+
+body {
+	font-size: 14px;
+}
+
+/* Title */
+h1 {
+	color: #e74c3c;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-weight: normal;
+	margin-top: 50px;
+	position: relative;
+	text-align: center;
+	width: 100%;
+}
+
+/* Text in footer */
+h3 {
+	color: #2c3e50;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	margin-top: 400px;
+	position: relative;
+	text-align: center;
+	width: 100%;
+}
+
+/* Link styles */
+a, a:visited, a:hover {
+	color: #e74c3c;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #a05772;
+}
+
+/* Styles for buttons container */
+.container {
+	left: 50%;
+	margin: -86px 0 0 -103px;
+	position: absolute;
+	top: 50%;
+}
+
+/* Facebook */
+.fb-icon-bg {
+	background: #354f88;
+	height: 37px;
+	margin: 0 0 -37px 0;
+	width: 41px;
+}
+
+.fb-icon-bg:after {
+	content:"";
+	background: url(./images/facebook.png) no-repeat 0 0;
+	background-size: 100%;
+	display: block;
+	height:37px;
+	width:41px;
+}
+
+.fb-bg {
+	background: #354f88;
+	display: block;
+	height: 37px;
+	margin: 0 0 30px 41px;
+	width: 166px;
+}
+
+.fb-bg:after {
+	color: #fff;
+	content: "sign in with facebook";
+	font-family: 'Oswald', sans-serif;
+	height: 37px;
+	left: 8%;
+	position: relative;
+	text-transform: uppercase;
+	top: 22%;
+	width: 41px;
+}
+
+.fb-bg:hover {
+	cursor: pointer;
+}
+
+.fb-bg:active {
+	background: #354f88;
+}
+
+/* Twitter */
+.twi-icon-bg:after {
+	content:"";
+	background: url(./images/twitter.png) no-repeat 0 0;
+	background-size: 100%;
+	display: block;
+	height:37px;
+	width:41px;
+}
+
+.twi-icon-bg {
+	background: #40a2d1;
+	height: 37px;
+	margin: 0 0 -37px 0;
+	width: 41px;
+}
+
+.twi-bg {
+	background: #45b0e3;
+	height: 37px;
+	margin: 0 0 30px 41px;
+	width: 166px;
+}
+
+.twi-bg:after {
+	color: #fff;
+	content: "sign in with twitter";
+	font-family: 'Oswald', sans-serif;
+	height: 37px;
+	left: 11%;
+	position: relative;
+	text-transform: uppercase;
+	top: 22%;
+	width: 41px;
+}
+
+.twi-bg:hover {
+	cursor: pointer;
+}
+
+.twi-bg:active {
+	background: #40a2d1;
+}
+
+/* Google+ */
+.g-icon-bg:after {
+	content:"";
+	background: url(./images/google.png) no-repeat 0 0;
+	background-size: 100%;
+	display: block;
+	height:37px;
+	width:41px;
+}
+
+.g-icon-bg {
+	background: #ce3e26;
+	height: 37px;
+	margin: 0 0 -37px 0;
+	width: 41px;
+}
+
+.g-bg {
+	background: #de4c34;
+	height: 37px;
+	margin-left: 41px;
+	width: 166px;
+}
+
+.g-bg:after {
+	color: #fff;
+	content: "sign in with google+";
+	font-family: 'Oswald', sans-serif;
+	height: 37px;
+	left: 10%;
+	position: relative;
+	text-transform: uppercase;
+	top: 22%;
+	width: 41px;
+}
+
+.g-bg:hover {
+	cursor: pointer;
+}
+
+.g-bg:active {
+	background: #ce3e26;
+}
+</style>
+</head>
 <body>
-	<div>
-		<a href="/uaa/login/google">Google</a>
-	</div>
-	<div>
-		<a href="/uaa/login/facebook">Facebook</a>
-	</div>
-	<div>
-		<a href="/uaa/login/github">Github</a>
+	<div class="container">
+		<div class="fb-icon-bg"></div>
+		<div class="fb-bg" onclick="location.href='/uaa/login/facebook';"></div>
+		<div class="twi-icon-bg"></div>
+		<div class="twi-bg" onclick="location.href='/uaa/login/twitter';"></div>
+		<div class="g-icon-bg"></div>
+		<div class="g-bg" onclick="location.href='/uaa/login/google';"></div>
 	</div>
 </body>
 </html>
+
