@@ -11,6 +11,7 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationDetails;
+import org.springframework.web.filter.CommonsRequestLoggingFilter;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
@@ -22,6 +23,16 @@ public class ThyngGatewayApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ThyngGatewayApplication.class, args);
+	}
+	
+	@Bean
+	public CommonsRequestLoggingFilter requestLoggingFilter() {
+		final CommonsRequestLoggingFilter filter = new CommonsRequestLoggingFilter();
+		filter.setIncludeClientInfo(true);
+		filter.setIncludeHeaders(true);
+		filter.setIncludePayload(true);
+		filter.setIncludeQueryString(true);
+		return filter;
 	}
 
 	@Bean
@@ -37,6 +48,7 @@ public class ThyngGatewayApplication {
 					final OAuth2Authentication authentication = (OAuth2Authentication)principal;
 					final OAuth2AuthenticationDetails details = (OAuth2AuthenticationDetails)authentication.getDetails();
 					requestContext.addZuulRequestHeader("Authorization", details.getTokenType()+" "+details.getTokenValue());
+					System.out.println("Authorization: "+details.getTokenType()+" "+details.getTokenValue());
 				}
 				return null;
 			}

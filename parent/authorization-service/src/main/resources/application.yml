@@ -1,0 +1,35 @@
+server:
+  port: 9999
+  context-path: /uaa
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${DISCOVERY_SERVICE:http://localhost:8761/eureka/}
+google:
+  client:
+    access-token-uri: https://www.googleapis.com/oauth2/v3/token
+    user-authorization-uri: https://accounts.google.com/o/oauth2/auth
+    client-id: 509371271928-8tmc59irvegmcs75rs8ea91en07a6mea.apps.googleusercontent.com
+    client-secret: ybAHKjxV-LhrLo0lH7avbXuM
+    clientAuthenticationScheme: form
+    scope:
+    - openid
+    - email
+    - profile
+  resource:
+    user-info-uri: https://www.googleapis.com/oauth2/v3/userinfo
+    prefer-token-info: true
+facebook:
+  client:
+    clientId: 233668646673605
+    clientSecret: 33b17e044ee6a4fa383f46ec6e28ea1d
+    accessTokenUri: https://graph.facebook.com/oauth/access_token
+    userAuthorizationUri: https://www.facebook.com/dialog/oauth
+    tokenName: oauth_token
+    authenticationScheme: query
+    clientAuthenticationScheme: form
+  resource:
+    userInfoUri: https://graph.facebook.com/me
+logging:
+  level:
+    org.springframework.security: DEBUG

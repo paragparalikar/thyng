@@ -1,0 +1,16 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${DISCOVERY_SERVICE:http://localhost:8761/eureka/}
+security:
+  oauth2:
+    client:
+      access-token-uri: http://localhost:9999/uaa/oauth/token
+      user-authorization-uri: http://localhost:9999/uaa/oauth/authorize
+      client-id: gateway-service
+      client-secret: gateway-service
+    resource:
+      user-info-uri: http://localhost:8085/user
+logging:
+  level:
+    org.springframework.security: DEBUG

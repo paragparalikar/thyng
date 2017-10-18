@@ -15,7 +15,7 @@ import org.springframework.security.oauth2.client.filter.OAuth2ClientContextFilt
 @Configuration
 @EnableOAuth2Sso
 public class OAuth2Configuration {
-	
+
 	@Bean
 	public FilterRegistrationBean oauth2ClientFilterRegistration(OAuth2ClientContextFilter filter) {
 		final FilterRegistrationBean registration = new FilterRegistrationBean();
@@ -28,7 +28,6 @@ public class OAuth2Configuration {
 	@Order(Ordered.HIGHEST_PRECEDENCE)
 	public UserInfoRestTemplateCustomizer userInfoRestTemplateCustomizer() {
 		final UserInfoRestTemplateCustomizer userInfoRestTemplateCustomizer = new UserInfoRestTemplateCustomizer() {
-			
 			@Override
 			public void customize(final OAuth2RestTemplate template) {
 				template.setInterceptors(new ArrayList<>(template.getInterceptors()));
@@ -36,6 +35,5 @@ public class OAuth2Configuration {
 		};
 		return userInfoRestTemplateCustomizer;
 	}
-
 
 }
